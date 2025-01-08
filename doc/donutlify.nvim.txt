@@ -4,11 +4,27 @@
 Table of Contents                           *donutlify.nvim-table-of-contents*
 
 1. Donutlify.nvim                              |donutlify.nvim-donutlify.nvim|
+  - Howto use                        |donutlify.nvim-donutlify.nvim-howto-use|
   - Installation                  |donutlify.nvim-donutlify.nvim-installation|
   - See also                          |donutlify.nvim-donutlify.nvim-see-also|
 
 ==============================================================================
 1. Donutlify.nvim                              *donutlify.nvim-donutlify.nvim*
+
+**Donutlify** is a fun Neovim plugin that transforms your buffer text into the
+shape of a donut! The usage is the same as `center` command (see |:center|).
+
+The plugin creates as many donuts as possible with the given diameter and
+crafts a smaller donut from any remaining text. Bring some sweetness to your
+coding with Donutlify!
+
+
+HOWTO USE                            *donutlify.nvim-donutlify.nvim-howto-use*
+
+`:[range]Donutlify [diameter]` Combine lines in `[range]` in the shape of the
+donut with `[diameter]` characters in diameter (by default `'textwidth'` or 80
+when `'textwidth'` is 0). If `[range]` is not specified, format the entire
+buffer.
 
 
 INSTALLATION                      *donutlify.nvim-donutlify.nvim-installation*
@@ -35,7 +51,9 @@ rocks.nvim <https://github.com/nvim-neorocks/rocks.nvim>
 
 
   [!NOTE]
-  - Thereis no need to lazy load `donutlify`, it lazy loads by default.
+  - Thereis no need to call the `setup` function, only call it if you
+      need to change some options
+  - There is no need to lazy load `donutlify`, it lazy loads by default.
 
 SEE ALSO                              *donutlify.nvim-donutlify.nvim-see-also*
 
