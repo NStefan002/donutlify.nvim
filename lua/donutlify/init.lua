@@ -74,7 +74,8 @@ end
 
 ---@param line_start integer
 ---@param line_end integer
-function M.donutlify(line_start, line_end)
+---@param diameter integer
+function M.donutlify(line_start, line_end, diameter)
     local lines = api.nvim_buf_get_lines(0, line_start, line_end, false)
     -- trim all lines
     lines = vim.iter(lines)
@@ -85,27 +86,16 @@ function M.donutlify(line_start, line_end)
     local text = table.concat(lines, " ")
     local text_len = api.nvim_strwidth(text)
 
-    local default_radius = 40
-    local radius = math.floor(vim.bo.textwidth / 2)
-    if radius == 0 then
-        radius = math.floor(vim.bo.wrapmargin / 2)
-    end
-    if radius == 0 then
-        radius = default_radius
-    end
+    local radius = math.floor(diameter)
 
     local donuts = {}
-    local default_donut_max_chars = calc_donut_area(default_radius)
-    while text_len > default_donut_max_chars do
+    local donut_max_chars = calc_donut_area(radius)
+    while text_len > donut_max_chars do
         table.insert(
             donuts,
-            make_it_donut(
-                util.utf_sub(text, 1, default_donut_max_chars),
-                radius,
-                math.ceil(radius / 4)
-            )
+            make_it_donut(util.utf_sub(text, 1, donut_max_chars), radius, math.ceil(radius / 4))
         )
-        text = util.utf_sub(text, default_donut_max_chars + 1)
+        text = util.utf_sub(text, donut_max_chars + 1)
         text_len = api.nvim_strwidth(text)
     end
     local outer_radius, inner_radius = determine_radius(text_len)

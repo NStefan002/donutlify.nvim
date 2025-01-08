@@ -5,7 +5,13 @@ local function cmd(data)
     else
         line_start, line_end = data.line1 - 1, data.line2
     end
-    require("donutlify").donutlify(line_start, line_end)
+    local diameter = 80
+    if #data.fargs > 0 then
+        diameter = tonumber(data.fargs[1]) or diameter
+    elseif vim.bo.textwidth > 0 then
+        diameter = vim.bo.textwidth
+    end
+    require("donutlify").donutlify(line_start, line_end, diameter)
 end
 
 vim.api.nvim_create_user_command("Donutlify", cmd, {
