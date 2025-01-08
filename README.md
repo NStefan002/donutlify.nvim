@@ -20,7 +20,7 @@ If `[range]` is not specified, format the entire buffer.
 [lazy](https://github.com/folke/lazy.nvim):
 
 ```lua
-return {
+{
     "NStefan002/donutlify.nvim",
     lazy = false,
     version = "*",
@@ -44,3 +44,6 @@ use({ "NStefan002/donutlify.nvim", tag = "*" })
 > - There is no need to lazy load `donutlify`, it lazy loads by default.
 
 ## 👀 See also
+
+- [web version of this plugin](https://nstefan002.github.io/donutlify/)
+- [spinning donut screensaver](https://github.com/NStefan002/donut.nvim)
