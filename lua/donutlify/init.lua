@@ -86,7 +86,7 @@ function M.donutlify(line_start, line_end, diameter)
     local text = table.concat(lines, " ")
     local text_len = api.nvim_strwidth(text)
 
-    local radius = math.floor(diameter)
+    local radius = math.floor(diameter / 2)
 
     local donuts = {}
     local donut_max_chars = calc_donut_area(radius)
