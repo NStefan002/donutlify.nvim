@@ -1,5 +1,16 @@
 local M = {}
 
+---notify user of an error
+---@param msg string
+function M.error(msg)
+    vim.notify("\n" .. msg, vim.log.levels.ERROR, { title = "Donutlify.nvim" })
+end
+
+---@param msg string
+function M.info(msg)
+    vim.notify("\n" .. msg, vim.log.levels.INFO, { title = "Donutlify.nvim" })
+end
+
 ---Get the character at the given index in a utf-8 string
 ---@param str string
 ---@param idx integer if negative, index from the end of the string (-1 is the last character)
