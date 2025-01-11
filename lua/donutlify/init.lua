@@ -2,6 +2,10 @@ local api = vim.api
 local util = require("donutlify.util")
 local M = {}
 
+---smaller radii will just not work
+---@type integer
+local min_outer_radius = 7
+
 ---@param radius integer
 ---@return integer
 local function calc_donut_area(radius)
@@ -16,7 +20,7 @@ end
 local function determine_radius(text_len)
     local best_outer_radius, best_inner_radius = 0, 0
 
-    for outer_radius = 60, 7, -1 do
+    for outer_radius = 60, min_outer_radius, -1 do
         local inner_radius = math.ceil(outer_radius / 4)
         local donut_area = calc_donut_area(outer_radius)
 
@@ -76,6 +80,11 @@ end
 ---@param line_end integer
 ---@param diameter integer
 function M.donutlify(line_start, line_end, diameter)
+    if diameter < min_outer_radius * 2 then
+        util.error("Diameter is too small, minimum is " .. min_outer_radius * 2)
+        return
+    end
+
     local lines = api.nvim_buf_get_lines(0, line_start, line_end, false)
     -- trim all lines
     lines = vim.iter(lines)
