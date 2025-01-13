@@ -11,6 +11,13 @@ function M.info(msg)
     vim.notify("\n" .. msg, vim.log.levels.INFO, { title = "Donutlify.nvim" })
 end
 
+---round a number to the nearest integer
+---@param x number
+---@return integer
+function M.round(x)
+    return math.floor(x + 0.5)
+end
+
 ---Get the character at the given index in a utf-8 string
 ---@param str string
 ---@param idx integer if negative, index from the end of the string (-1 is the last character)
