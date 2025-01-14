@@ -15,6 +15,11 @@ Combine lines in `[range]` in the shape of the donut with `[diameter]`
 characters in diameter (by default `'textwidth'` or 80 when `'textwidth'` is 0).
 If `[range]` is not specified, format the entire buffer.
 
+## 📺 Showcase
+
+https://github.com/user-attachments/assets/7befd795-1d40-4b1c-bf77-59453dd70dba
+
+
 ## 📋 Installation
 
 [lazy](https://github.com/folke/lazy.nvim):
