@@ -1,10 +1,11 @@
-*donutlify.nvim.txt*     For Neovim >= 0.10.0     Last change: 2025 January 13
+*donutlify.nvim.txt*     For Neovim >= 0.10.0     Last change: 2025 January 14
 
 ==============================================================================
 Table of Contents                           *donutlify.nvim-table-of-contents*
 
 1. Donutlify.nvim                              |donutlify.nvim-donutlify.nvim|
   - Howto use                        |donutlify.nvim-donutlify.nvim-howto-use|
+  - Showcase                          |donutlify.nvim-donutlify.nvim-showcase|
   - Installation                  |donutlify.nvim-donutlify.nvim-installation|
   - See also                          |donutlify.nvim-donutlify.nvim-see-also|
 
@@ -25,6 +26,12 @@ HOWTO USE                            *donutlify.nvim-donutlify.nvim-howto-use*
 donut with `[diameter]` characters in diameter (by default `'textwidth'` or 80
 when `'textwidth'` is 0). If `[range]` is not specified, format the entire
 buffer.
+
+
+SHOWCASE                              *donutlify.nvim-donutlify.nvim-showcase*
+
+
+https://github.com/user-attachments/assets/7befd795-1d40-4b1c-bf77-59453dd70dba
 
 
 INSTALLATION                      *donutlify.nvim-donutlify.nvim-installation*
