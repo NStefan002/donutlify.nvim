@@ -1,4 +1,4 @@
-*donutlify.nvim.txt*     For Neovim >= 0.10.0     Last change: 2025 January 14
+*donutlify.nvim.txt*     For Neovim >= 0.10.0     Last change: 2025 January 15
 
 ==============================================================================
 Table of Contents                           *donutlify.nvim-table-of-contents*
